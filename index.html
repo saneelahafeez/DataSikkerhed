@@ -5,16 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing scenario</title>
     <link rel="stylesheet" href="css/style.css">
+    <script
+      src="https://kit.fontawesome.com/faeb6a1351.js"
+      crossorigin="anonymous">
+    </script>
+
     <script src="js/script.js" defer></script>
 </head>
+
 <body>
+    <!--Navigation-->
+      <header>
+        <!--Burger menu-->
+        <!-- TOP HEADER -->
+         
+         <div class="top-header">
+           <a href="index.html"
+            ><img src="img/IBAlogo.png" alt="logo af IBA"/></a>
+            <h1>Datasikkerhed som studerende hos IBA</h1>
+         </div>
+
+         <div class="navbar">
+          <nav>
+          <!-- Navigationselementer -->
+          <!-- Bars -->
+          <button
+            id="bars"
+            aria-expanded="false"
+            aria-controls="menu"
+            aria-label="åben navigation"
+          >
+            <!-- aria-expanden fortæller skærmoplæseren at menuen er lukket-->
+            <!--aria-label giver skærmlæseren en besked om hvad knappen gør-->
+            <!--button gør menuen trykbar så den kan åbnes via tastatur-->
+            <!--aria-controls fortæller skærmoplæseren at menuen er styret af knappen-->
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <!--Navigation-->
+          <ul id="menu">
+            <!-- id="menu" er en reference til knappen med aria-controls -->
+            <!-- <li><a class="active" href="#">Forside</a></li> -->
+            <li><a href="#">Phishing</a></li>
+            <li><a href="#">Log-in sikkerhed</a></li>
+            <li><a href="#">Data beskyttelse</a></li>
+          </ul>
+          </nav>
+      </div>
+      </header>
     <main>
-        <section>
+        <section class="hero-bstyle">
+         
+         <h1>Du kan blive det næste ofre! Vær opmærksom!!</h1>
+         <a href="#">Læs mere</a>
 
-
-            
         </section>
 
+        <section class="designPara">
+          <p>Vidste du at over 90% af cyberangreb starter med en phishing-mail. Det kan betale sig at kende faresignalerne.  Læs og beskyt dig selv. </p>
+           <p>Vidste du at over 90% af cyberangreb starter med en phishing-mail. Det kan betale sig at kende faresignalerne.  Læs og beskyt dig selv</p>
+        </section>
+
+        <section class="phishing-container">
+            <div class="container1">
+              <h3>Hvad er phishing?</h3>
+              <p>Phishing er digital svindel, hvor du narres til at dele fx login- eller betalingsoplysninger via falske, men troværdige beskeder.</p>
+            </div>
+            <div class="container2">
+              <h3>Typer af Phishing </h3>
+              <a href="#">Læs mere</a>
+            </div>
+
+        </section>
 
     </main>
     
