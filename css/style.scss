@@ -250,19 +250,27 @@ body{
 
 .horisontal{
     padding: 3em 0;
-    overflow-x: auto;  /*håndtere scroll på x aksen */
+    overflow-x: scroll;  /*håndtere scroll på x aksen */
     display: flex;
     gap: 3em; /*plads imellem image */
     background: rgb(206, 195, 195);
+    margin-bottom: 90px;
+    padding-left: 20px;
 
 }
 
   
 .horisontal img {
-    width: 30vw;            /* mindre img */
+    width: 40vw;            /* mindre img */
+    height: auto;
     scroll-snap-align: start;
     flex-shrink: 0; /* 👈 DET HER FIXER DET */
     border-radius: 15px;
 }
 
+footer{
+
+    background-color: partial.$nav-color;
+    height: 12em;
+}
   
