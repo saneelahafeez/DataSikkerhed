@@ -1,11 +1,16 @@
 @use 'partial'; /*Partial fil hentes ind i style.scss som et modul. Filen er en samling af variabler, mixins og funktioner som kan genbruges*/
 
+
+
 body{
+
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: partial.$font;
     background-color: partial.$bg-color;
+
+    zoom: 0.7; // 👈 TILFØJ DEN HER
 
     /*Nesting - indsætter "alle" elementer som har direkte relation til øverste element af blokken*/    
         p{
@@ -19,6 +24,7 @@ body{
             color: partial.$text-color;
         }
 }
+
 
 /*Skip to main content code snippet fra:https://www.a11y-collective.com/blog/skip-to-main-content/ */
 
@@ -67,8 +73,9 @@ body{
 
     h1 {
     color: white;
-    font-size: 1.5rem;
-    padding-left: 8em;
+    font-weight: 600;
+    font-size: 3rem;
+    padding-left: 4em;
 
   }
 
@@ -99,13 +106,13 @@ body{
             color: partial.$text-color;
             padding: 0.5em;
             margin: 0.5em;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             text-decoration: none;
         }
 
         a:hover, .active{
-            color: partial.$primary-color;
+            color: partial.$footer-color;
         }
 
     .navbar{
@@ -120,7 +127,7 @@ body{
 
 .navbar nav {
   @include partial.flex(center);
-  padding: 0.5rem;
+  padding: 0.2rem;
 }
 
 
@@ -129,7 +136,7 @@ body{
   } 
   
    .hero-bstyle{
-    background-image:url(../img/hero_b.jpg);
+    background-image:url(../img/hero_pic.jpg);
     background-repeat: no repeat;
     background-size: cover;
     background-position: center;
@@ -137,9 +144,9 @@ body{
     height:90vh;
     
     h1{
-    font-size: 40px;
+    font-size: 70px;
     position: absolute;
-    bottom: 150px;
+    bottom: 300px;
     left: 70px;
     color: partial.$bg-color;
 
@@ -151,8 +158,8 @@ body{
     
         @include partial.btn();
         position: absolute;
-        bottom: 100px;
-        left: 130px;
+        bottom: 180px;
+        left: 220px;
 
     }
 
@@ -169,7 +176,7 @@ body{
 
     p{
     color: partial.$nav-color;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
     margin-right: 50px;
     margin-left: 50px;
@@ -184,16 +191,21 @@ body{
     margin-left: 50px;
     margin-right: 50px;
     height: 80vh;
+    border-radius: 15px;
    
 
     .container1{
-        height:500px;
+        height:95%;
+        border-radius: 15px;
+        width: 100%;
+        padding: 20px;
 
         background-color: partial.$containerbg;
         p{
             font-weight: 500;
             font-size: 30px;
             color: partial.$footer-color;
+
         }
     }
 
@@ -208,9 +220,49 @@ body{
 .container2{
     background-image: url(../img/fisk.jpg);
     background-size: cover;
-    height: 500px;
+    height: 95%;
     width: 100%;
+    font-weight: 500;
+    border-radius: 15px;
+    padding-left: 20px;
+
 }
 
-  }
+
+
+}
+
+.faresignaler{
+  display: flex;
+//   flex-direction: column;
+  align-items: center; /* gør dem pænt justeret lodret */
+  gap: 20px; /* afstand mellem logo og tekst */
+  margin-left: 20px;
+  margin-top: 2em;
+    background-image: url(../img/fisk.jpg);
+    // background-size: cover;
+    height: 500px;
+    width: 70%;
+    border-radius: 15px;
+    
+    // background-color: partial.$containerbg;
+}
+
+.horisontal{
+    padding: 3em 0;
+    overflow-x: auto;  /*håndtere scroll på x aksen */
+    display: flex;
+    gap: 3em; /*plads imellem image */
+    background: rgb(206, 195, 195);
+
+}
+
+  
+.horisontal img {
+    width: 30vw;            /* mindre img */
+    scroll-snap-align: start;
+    flex-shrink: 0; /* 👈 DET HER FIXER DET */
+    border-radius: 15px;
+}
+
   
