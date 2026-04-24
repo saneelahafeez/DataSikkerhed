@@ -55,6 +55,15 @@ body{
     grid-auto-rows: minmax(50px, auto); /*Ved at bruge minmax sikrer vi en minimumsstørrelse af vores gridelementer og ved auto sikrer vi at boksen tilpasser sig efter indholdet*/
   }
 
+.btn {
+  @include partial.btn();
+}
+
+.btn:hover {
+  background-color: partial.$primary-color;
+  border: solid 2px partial.$primary-color;
+}
+
   /*Navigation*/
 
   header{
@@ -152,6 +161,8 @@ body{
 
     }
 
+
+
     a{
     
         // her kalder vi funktionen btn , vi bruger @include
@@ -192,6 +203,7 @@ body{
     margin-right: 50px;
     height: 80vh;
     border-radius: 15px;
+    margin-bottom: 2em;
    
 
     .container1{
@@ -224,22 +236,30 @@ body{
     width: 100%;
     font-weight: 500;
     border-radius: 15px;
-    padding-left: 20px;
+    padding: 20px;
+    
 
 }
 
 
 
 }
+
+.container_faresignaler {
+  background: url(../img/fisk.jpg);
+  margin: 2em 50px;
+  border-radius: 15px;
+}
+
 
 .faresignaler{
   display: flex;
-//   flex-direction: column;
-  align-items: center; /* gør dem pænt justeret lodret */
-  gap: 20px; /* afstand mellem logo og tekst */
-  margin-left: 20px;
-  margin-top: 2em;
-    background-image: url(../img/fisk.jpg);
+  flex-direction: column;
+  //   align-items: center; /* gør dem pænt justeret lodret */
+  gap: 1px; /* afstand mellem logo og tekst */
+  margin-left: 10px;
+  margin-top: 10px;
+  background-image: url(../img/fisk.jpg);
     // background-size: cover;
     height: 500px;
     width: 70%;
@@ -249,14 +269,12 @@ body{
 }
 
 .horisontal{
-    padding: 3em 0;
-    overflow-x: scroll;  /*håndtere scroll på x aksen */
-    display: flex;
-    gap: 3em; /*plads imellem image */
-    background: rgb(206, 195, 195);
-    margin-bottom: 90px;
-    padding-left: 20px;
-
+padding: 3em 0 3em 20px;
+overflow-x: auto;
+display: flex;
+gap: 3em;
+background: rgb(206, 195, 195);
+margin-bottom: 90px;
 }
 
   

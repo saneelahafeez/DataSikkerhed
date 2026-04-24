@@ -52,6 +52,21 @@ img {
   grid-auto-rows: minmax(50px, auto); /*Ved at bruge minmax sikrer vi en minimumsstørrelse af vores gridelementer og ved auto sikrer vi at boksen tilpasser sig efter indholdet*/
 }
 
+.btn {
+  background-color: #E8752E;
+  color: #f0f0f0;
+  border: solid 1px #E8752E;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.btn:hover {
+  background-color: #388071;
+  border: solid 2px #388071;
+}
+
 /*Navigation*/
 header {
   grid-column: 1/6; /*grid column start og slut på en linje i stedet for to*/
@@ -172,6 +187,7 @@ nav {
   margin-right: 50px;
   height: 80vh;
   border-radius: 15px;
+  margin-bottom: 2em;
 }
 .phishing-container .container1 {
   height: 95%;
@@ -197,15 +213,21 @@ nav {
   width: 100%;
   font-weight: 500;
   border-radius: 15px;
-  padding-left: 20px;
+  padding: 20px;
+}
+
+.container_faresignaler {
+  background: url(../img/fisk.jpg);
+  margin: 2em 50px;
+  border-radius: 15px;
 }
 
 .faresignaler {
   display: flex;
-  align-items: center; /* gør dem pænt justeret lodret */
-  gap: 20px; /* afstand mellem logo og tekst */
-  margin-left: 20px;
-  margin-top: 2em;
+  flex-direction: column;
+  gap: 1px; /* afstand mellem logo og tekst */
+  margin-left: 10px;
+  margin-top: 10px;
   background-image: url(../img/fisk.jpg);
   height: 500px;
   width: 70%;
@@ -213,13 +235,12 @@ nav {
 }
 
 .horisontal {
-  padding: 3em 0;
-  overflow-x: scroll; /*håndtere scroll på x aksen */
+  padding: 3em 0 3em 20px;
+  overflow-x: auto;
   display: flex;
-  gap: 3em; /*plads imellem image */
+  gap: 3em;
   background: rgb(206, 195, 195);
   margin-bottom: 90px;
-  padding-left: 20px;
 }
 
 .horisontal img {
