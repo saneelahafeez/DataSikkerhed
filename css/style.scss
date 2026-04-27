@@ -171,17 +171,19 @@ body{
         position: absolute;
         bottom: 180px;
         left: 220px;
+        @include partial.link-hover();
 
     }
 
-    a:hover{
+    //a:hover{
+       //  @include partial.link-hover();
 
-        background-color: partial.$primary-color;
-        border: solid 2px partial.$primary-color;
+       // background-color: partial.$primary-color;
+       // border: solid 2px partial.$primary-color;
     }
 
     
-  }
+  
 
   .designPara{
 
@@ -258,8 +260,14 @@ body{
     padding: 20px;
 
     @include partial.shadow-hover-focus;
+   
         
  
+}
+
+.btn{
+
+@include partial.link-hover();
 }
 
 }
@@ -267,12 +275,10 @@ body{
 .container_faresignaler {
 
   @include partial.flex($justify:space-around);  
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 50px 50px;
   border-radius: 15px;
   background-color: partial.$bg-color;
   border: solid 3px partial.$text-color;
-  border-radius: 5px;
   @include partial.shadow-hover-focus;
 
     .styl-bullet{
@@ -286,8 +292,8 @@ body{
   }
 
   ul li{
-       font-size:30px;
-       padding-top: 20px;
+        font-size:30px;
+        padding-top: 20px;
         color:partial.$nav-color;  
   }
 
@@ -298,6 +304,9 @@ body{
   a{
     @include partial.btn(20px 30px 20px 30px);
     margin-left: 5em;
+    @include partial.shadow-hover-focus;
+    @include partial.link-hover();
+
   }
    }
 
@@ -313,6 +322,7 @@ display: flex;
 gap: 3em;
 background: rgb(206, 195, 195);
 margin-bottom: 90px;
+margin-top: 90px;
 }
 
   
@@ -330,4 +340,4 @@ footer{
     height: 12em;
 }
   
-// flex-wrap: wrap: 
+// mediaquery flex-wrap: wrap: 

@@ -55,8 +55,8 @@ img {
 .btn {
   background-color: #E8752E;
   color: #f0f0f0;
-  border: solid 1px #E8752E;
-  border-radius: 5px;
+  border: solid 3px #E8752E;
+  border-radius: 8px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   font-weight: 800;
@@ -155,8 +155,8 @@ nav {
 .hero-bstyle a {
   background-color: #E8752E;
   color: #f0f0f0;
-  border: solid 1px #E8752E;
-  border-radius: 5px;
+  border: solid 3px #E8752E;
+  border-radius: 8px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   font-weight: 800;
@@ -165,8 +165,8 @@ nav {
   left: 220px;
 }
 .hero-bstyle a:hover {
-  background-color: #388071;
-  border: solid 2px #388071;
+  background-color: #000000;
+  border: solid 2px #f0f0f0;
 }
 
 .designPara p {
@@ -233,18 +233,20 @@ nav {
 .phishing-container .container2:hover, .phishing-container .container2:focus {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
+.phishing-container .btn:hover {
+  background-color: #000000;
+  border: solid 2px #f0f0f0;
+}
 
 .container_faresignaler {
   /*$justify og $align er parametre/variabler som kan ændres når vores mixin kaldes*/
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 50px 50px;
   border-radius: 15px;
   background-color: #f0f0f0;
   border: solid 3px #E8752E;
-  border-radius: 5px;
   transition: all 0.3s ease;
   outline: none;
 }
@@ -270,12 +272,21 @@ nav {
 .container_faresignaler .styl-bullet a {
   background-color: #E8752E;
   color: #f0f0f0;
-  border: solid 1px #E8752E;
-  border-radius: 5px;
+  border: solid 3px #E8752E;
+  border-radius: 8px;
   padding: 20px 30px 20px 30px;
   text-decoration: none;
   font-weight: 800;
   margin-left: 5em;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.container_faresignaler .styl-bullet a:hover, .container_faresignaler .styl-bullet a:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.container_faresignaler .styl-bullet a:hover {
+  background-color: #000000;
+  border: solid 2px #f0f0f0;
 }
 
 .horisontal {
@@ -285,6 +296,7 @@ nav {
   gap: 3em;
   background: rgb(206, 195, 195);
   margin-bottom: 90px;
+  margin-top: 90px;
 }
 
 .horisontal img {
