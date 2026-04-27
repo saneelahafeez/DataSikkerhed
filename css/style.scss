@@ -213,6 +213,25 @@ body{
         padding: 20px;
 
         background-color: partial.$containerbg;
+
+        transition: all 0.3s ease;
+        outline: none;
+ 
+}
+  p{
+            font-weight: 480;
+            font-size: 28px;
+            color: partial.$footer-color;
+
+        }
+
+.container1:focus {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.container1:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+
         p{
             font-weight: 500;
             font-size: 30px;
@@ -224,7 +243,7 @@ body{
     h3{
 
         font-size: 30px;
-        font-weight: 600;
+        font-weight: 800;
         color: partial.$footer-color;
         
     }
@@ -237,36 +256,55 @@ body{
     font-weight: 500;
     border-radius: 15px;
     padding: 20px;
-    
 
+    @include partial.shadow-hover-focus;
+        
+ 
 }
-
-
 
 }
 
 .container_faresignaler {
-  background: url(../img/fisk.jpg);
-  margin: 2em 50px;
+
+  @include partial.flex($justify:space-around);  
+  margin-left: 50px;
+  margin-right: 50px;
   border-radius: 15px;
-}
+  background-color: partial.$bg-color;
+  border: solid 3px partial.$text-color;
+  border-radius: 5px;
+  @include partial.shadow-hover-focus;
 
+    .styl-bullet{
+      margin-right: 10em;
+      padding: 3em 3em;
 
-.faresignaler{
-  display: flex;
-  flex-direction: column;
-  //   align-items: center; /* gør dem pænt justeret lodret */
-  gap: 1px; /* afstand mellem logo og tekst */
-  margin-left: 10px;
-  margin-top: 10px;
-  background-image: url(../img/fisk.jpg);
-    // background-size: cover;
-    height: 500px;
-    width: 70%;
-    border-radius: 15px;
-    
-    // background-color: partial.$containerbg;
+   
+     h2{
+        font-size: 40px;
+        color:partial.$nav-color;
+  }
+
+  ul li{
+       font-size:30px;
+       padding-top: 20px;
+        color:partial.$nav-color;  
+  }
+
+  ul{
+    margin-bottom: 3em;
+  }
+
+  a{
+    @include partial.btn(20px 30px 20px 30px);
+    margin-left: 5em;
+  }
+   }
+
+  
 }
+ 
+
 
 .horisontal{
 padding: 3em 0 3em 20px;
@@ -292,3 +330,4 @@ footer{
     height: 12em;
 }
   
+// flex-wrap: wrap: 

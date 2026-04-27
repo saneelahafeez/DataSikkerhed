@@ -195,15 +195,28 @@ nav {
   width: 100%;
   padding: 20px;
   background-color: #F5F5F5;
+  transition: all 0.3s ease;
+  outline: none;
 }
-.phishing-container .container1 p {
+.phishing-container p {
+  font-weight: 480;
+  font-size: 28px;
+  color: #000000;
+}
+.phishing-container .container1:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.phishing-container .container1:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.phishing-container .container1:hover p {
   font-weight: 500;
   font-size: 30px;
   color: #000000;
 }
 .phishing-container h3 {
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 800;
   color: #000000;
 }
 .phishing-container .container2 {
@@ -214,24 +227,55 @@ nav {
   font-weight: 500;
   border-radius: 15px;
   padding: 20px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.phishing-container .container2:hover, .phishing-container .container2:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .container_faresignaler {
-  background: url(../img/fisk.jpg);
-  margin: 2em 50px;
-  border-radius: 15px;
-}
-
-.faresignaler {
+  /*$justify og $align er parametre/variabler som kan ændres når vores mixin kaldes*/
   display: flex;
-  flex-direction: column;
-  gap: 1px; /* afstand mellem logo og tekst */
-  margin-left: 10px;
-  margin-top: 10px;
-  background-image: url(../img/fisk.jpg);
-  height: 500px;
-  width: 70%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
   border-radius: 15px;
+  background-color: #f0f0f0;
+  border: solid 3px #E8752E;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+.container_faresignaler:hover, .container_faresignaler:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.container_faresignaler .styl-bullet {
+  margin-right: 10em;
+  padding: 3em 3em;
+}
+.container_faresignaler .styl-bullet h2 {
+  font-size: 40px;
+  color: #000000;
+}
+.container_faresignaler .styl-bullet ul li {
+  font-size: 30px;
+  padding-top: 20px;
+  color: #000000;
+}
+.container_faresignaler .styl-bullet ul {
+  margin-bottom: 3em;
+}
+.container_faresignaler .styl-bullet a {
+  background-color: #E8752E;
+  color: #f0f0f0;
+  border: solid 1px #E8752E;
+  border-radius: 5px;
+  padding: 20px 30px 20px 30px;
+  text-decoration: none;
+  font-weight: 800;
+  margin-left: 5em;
 }
 
 .horisontal {

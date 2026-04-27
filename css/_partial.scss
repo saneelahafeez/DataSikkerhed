@@ -33,3 +33,14 @@ Variabler defineret i blokke ({}) er normalvis lokale og kan kun tilgås inde i 
     font-weight: 800;
     
 }
+
+
+@mixin shadow-hover-focus {
+  transition: all 0.3s ease;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+}
