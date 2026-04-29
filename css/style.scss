@@ -253,14 +253,17 @@ body{
 .container2{
     background-image: url(../img/fisk.jpg);
     background-size: cover;
+    //border: solid 2px;
     height: 95%;
     width: 100%;
     font-weight: 500;
     border-radius: 15px;
     padding: 20px;
+    //padding-bottom: 20px;
 
-    il{
+    li{
             font-weight: 480;
+            line-height: 50px;
             font-size: 28px;
             color: partial.$footer-color;
 
@@ -277,6 +280,7 @@ body{
 .btn{
 
 @include partial.link-hover();
+//margin-bottom: 50px;
 }
 
 }
@@ -338,8 +342,19 @@ body{
 
   }
 
+//   .ofre-historier{
+//  font-size: 30px;
+//  background-color: partial.$navbg-color;
 
- 
+//   }
+
+  .ofre p{
+
+     font-size: 40px;
+     font-weight: 600;
+     color: black;
+     background-color: partial.$navbg-color;
+  }
 
 .horisontal{
 padding: 3em 0 3em 20px;

@@ -227,8 +227,9 @@ nav {
   border-radius: 15px;
   padding: 20px;
 }
-.phishing-container .container2 il {
+.phishing-container .container2 li {
   font-weight: 480;
+  line-height: 50px;
   font-size: 28px;
   color: #000000;
 }
@@ -308,6 +309,13 @@ nav {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.ofre p {
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
+  background-color: rgba(240, 240, 240, 0.9960784314);
 }
 
 .horisontal {
