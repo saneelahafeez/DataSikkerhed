@@ -264,23 +264,30 @@ nav {
 .container_faresignaler:hover, .container_faresignaler:focus {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-.container_faresignaler .styl-bullet {
+.container_faresignaler {
+  display: none;
+}
+.container_faresignaler.active {
+  display: flex;
+}
+
+.styl-bullet {
   margin-right: 5em;
   padding: 3em 3em;
 }
-.container_faresignaler .styl-bullet h2 {
+.styl-bullet h2 {
   font-size: 40px;
   color: #000000;
 }
-.container_faresignaler .styl-bullet ul li {
+.styl-bullet ul li {
   font-size: 30px;
   padding-top: 20px;
   color: #000000;
 }
-.container_faresignaler .styl-bullet ul {
+.styl-bullet ul {
   margin-bottom: 3em;
 }
-.container_faresignaler .styl-bullet a {
+.styl-bullet a {
   background-color: #E8752E;
   color: #f0f0f0;
   border: solid 3px #E8752E;
@@ -292,10 +299,10 @@ nav {
   transition: all 0.3s ease;
   outline: none;
 }
-.container_faresignaler .styl-bullet a:hover, .container_faresignaler .styl-bullet a:focus {
+.styl-bullet a:hover, .styl-bullet a:focus {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-.container_faresignaler .styl-bullet a:hover {
+.styl-bullet a:hover {
   background-color: #000000;
   border: solid 2px #f0f0f0;
 }
