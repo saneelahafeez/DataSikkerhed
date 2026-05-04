@@ -384,12 +384,15 @@ a {
   font-size: 16px;
 }
 
-.style-spil {
-  /*$justify og $align er parametre/variabler som kan ændres når vores mixin kaldes*/
+.style-spil .style-spil {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
+}
+.style-spil .btn {
+  margin-right: 1em;
+  margin-left: 1em;
 }
 .style-spil.activee {
   display: block;

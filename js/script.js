@@ -186,7 +186,7 @@ const nextStage = (e) => {
 
         case "Start":
             h2Text = "Du modtager mail fra SU kontoret.";
-            imagePath ="img/IBAlogo.png";
+            imagePath ="img/SUmail.png";
             pText = "Hvordan vælger du at handle?";
             btnsText = ["Åbner e-mail", "Ignorere", "Tjekker sender"];
            
