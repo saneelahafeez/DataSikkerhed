@@ -63,7 +63,7 @@ img {
 }
 
 .btn:hover {
-  background-color: #f0f1f1;
+  background-color: #000000;
   border: solid 2px #f0f1f1;
 }
 
@@ -221,8 +221,8 @@ nav {
 .phishing-container .container2 {
   background-image: url(../img/fisk.jpg);
   background-size: cover;
+  width: 95%;
   height: 95%;
-  width: 100%;
   font-weight: 500;
   border-radius: 15px;
   padding: 20px;

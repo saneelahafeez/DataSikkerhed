@@ -1,107 +1,104 @@
-const btn = document.querySelector(".container_faresignaler .btn"); // Variabel med elementet der fra start af har class="btn"
-const main = document.querySelector("main"); // Variabel med main-elementet
+// Start knap
+const btn = document.querySelector(".container_faresignaler .btn");
 
-// Funktion der opdaterer UI
-const buildStage = (h2Text, pText, btnsText, imagePath, fa) => {
-    // Nulstil så der ikke er nogen synlige sections
-    let prevStage = document.querySelectorAll(".stage");
-    for (stage of prevStage) {
-        stage.classList.remove("active");
-    }
-    // Lav en ny section og tilføj classes
+// Funktionen der opdatere UI
+const buildStage = (h2Text, pText, btnsText, imagePath, fa, currentSection) => {
+
+    // opret section
     const section = document.createElement("section");
-    section.classList.add("stage");
+    section.classList.add("container_faresignaler");
     section.classList.add("active");
 
-    // Lav en ny overskrift og sæt teksten fra switch-casen ind i den
+    // overskrift
     const h2 = document.createElement("h2");
     h2.textContent = h2Text;
     section.append(h2);
 
-    // Sæt billeder ind, hvis der er nogen stier defineret
-    if(imagePath != undefined) {
+    // vis billede hvis brugt
+    if (imagePath) {
         const img = document.createElement("img");
         img.src = imagePath;
         img.classList.add("stage-img");
         section.append(img);
     }
 
-    // Sæt ikoner ind, hvis der er nogen fa-classes defineret
-    if(fa != undefined) {
+    // vis ikon hvis brugt
+    if (fa) {
         const icon = document.createElement("i");
-        fa.forEach(faClass => {
-            icon.classList.add(faClass);
-        }) 
+        fa.forEach(cls => icon.classList.add(cls));
         section.append(icon);
     }
 
-    // Lav en paragraph og sæt teksten fra switch-casen ind i den
+    // Paragraph
     const p = document.createElement("p");
     p.textContent = pText;
     section.append(p);
 
-    // Sæt knapper ind, hvis der er nogen tekster til dem i switch-casen
-    if(btnsText != undefined) {
+    // knapper
+    if (btnsText) {
         btnsText.forEach(text => {
             const button = document.createElement("button");
             button.textContent = text;
             button.classList.add("btn");
             button.addEventListener("click", nextStage);
             section.append(button);
-        })
+        });
     }
-    // Sæt section fast i main
-    main.append(section);
-}
 
-// Function der afgør hvad der skal ske
+    // erstatter den nuværende sektion
+    currentSection.replaceWith(section);
+};
+
+
+// Der klikkes og vises
 const nextStage = (e) => {
-    // Variabel til de forskellige typer indhold
+
     let h2Text, pText, btnsText, imagePath, fa;
 
-    // Switch der tager udgangspunkt i, hvad der står på knappen, der blev klikket
-    switch(e.target.textContent) {
-        case "Start": 
-            h2Text = "Stage 1";
-            pText = "Lorem Ipsum";
-            btnsText = ["Option 1", "Option 2", "Option 3"];
-        break;
-        case "Option 1":
-            h2Text = "Option 1";
-            pText = "Lorem Ipsum";
-            btnsText = ["Well Done"];
-            imagePath = "img/manja-vitolic-gKXKBY-C-Dk-unsplash.jpg";
-        break;
-        case "Option 2":
-            h2Text = "Option 2";
-            pText = "Lorem Ipsum";
-            btnsText = ["Naah"];
-            fa = ["fa-solid", "fa-cat"];
-        break;
-        case "Option 3":
-            h2Text = "Option 3";
-            pText = "Lorem Ipsum";
-            btnsText = ["Naah"];
-        break;
-        case "Well Done": 
-            h2Text = "Well Done";
-            pText = "Lorem Ipsum Well Done";
-            btnsText = ["Start Over"];
-        break;
-        case "Naah":
-            h2Text = "Naah";
-            pText = "Lorem Ipsum";
-            btnsText = ["Start Over"];
-        break;
-        case "Start Over":
-            h2Text = "Branching Scenario";
-            pText = "Lorem Ipsum";
-            btnsText = ["Start"];
-        default: console.log("Error");
-    }
-    // Funktionskald, der sender oplysningerne med videre
-    buildStage(h2Text, pText, btnsText, imagePath, fa);
-}
+    //Find den section som bliver kaldt
+    const currentSection = e.target.closest(".container_faresignaler");
 
-// Tilføj event listener til element med class="btn"
+    switch (e.target.textContent) {
+
+        case "Start":
+            h2Text = "You received an email from your bank.";
+            pText = "What do you do?";
+            btnsText = ["Click the link", "Ignore it", "Check sender"];
+            break;
+
+        case "Click the link":
+            h2Text = "⚠️ Phishing Attack!";
+            pText = "You clicked a malicious link and your data was stolen.";
+            btnsText = ["Start Over"];
+            break;
+
+        case "Ignore it":
+            h2Text = "👍 Safe choice";
+            pText = "You avoided a potential phishing attack.";
+            btnsText = ["Start Over"];
+            break;
+
+        case "Check sender":
+            h2Text = "✅ Best choice!";
+            pText = "The email address was fake. You avoided the scam.";
+            btnsText = ["Start Over"];
+            break;
+
+        case "Start Over":
+            h2Text = "Try again";
+            pText = "Can you spot the phishing attempt?";
+            btnsText = ["Start"];
+            break;
+
+        default:
+            console.log("Error");
+            return;
+    }
+
+    // Build next stage
+    buildStage(h2Text, pText, btnsText, imagePath, fa, currentSection);
+};
+
+
+// Start button event
 btn.addEventListener("click", nextStage);
