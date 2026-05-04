@@ -4,13 +4,13 @@ const main = document.querySelector("main"); // Variabel med main-elementet
 // Funktion der opdaterer UI
 const buildStage = (h2Text, pText, btnsText, imagePath, fa) => {
     // Nulstil så der ikke er nogen synlige sections
-    let prevStage = document.querySelectorAll(".container_faresignaler"); // overskrevet stage
-    for (let stage of prevStage) {
+    let prevStage = document.querySelectorAll(".stage");
+    for (stage of prevStage) {
         stage.classList.remove("active");
     }
     // Lav en ny section og tilføj classes
     const section = document.createElement("section");
-    section.classList.add("container_faresignaler");//prøver lige at integrere der stod stage tidligere
+    section.classList.add("stage");
     section.classList.add("active");
 
     // Lav en ny overskrift og sæt teksten fra switch-casen ind i den
@@ -98,7 +98,6 @@ const nextStage = (e) => {
             pText = "Lorem Ipsum";
             btnsText = ["Start"];
         default: console.log("Error");
-          break;
     }
     // Funktionskald, der sender oplysningerne med videre
     buildStage(h2Text, pText, btnsText, imagePath, fa);
