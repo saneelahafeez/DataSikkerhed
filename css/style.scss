@@ -1,7 +1,6 @@
 @use 'partial'; /*Partial fil hentes ind i style.scss som et modul. Filen er en samling af variabler, mixins og funktioner som kan genbruges*/
 
 
-
 body{
 
     box-sizing: border-box;
@@ -10,7 +9,7 @@ body{
     font-family: partial.$font;
     background-color: partial.$containerbg;
 
-    zoom: 0.7; // 👈 TILFØJ DEN HER
+    zoom: 0.7; // TILFØJ DEN HER
 
     /*Nesting - indsætter "alle" elementer som har direkte relation til øverste element af blokken*/    
         p{
@@ -68,8 +67,7 @@ body{
 
   header{
     grid-column: 1/6; /*grid column start og slut på en linje i stedet for to*/
-    // background-color: partial.$nav-color;
-    // // border-bottom: 4px solid partial.$primary-color;
+    
 
     /* TOP HEADER (sort) */
     .top-header {
@@ -140,8 +138,6 @@ body{
 }
 
 
-        /* Navigation */
-
   } 
   
    .hero-bstyle{
@@ -162,11 +158,9 @@ body{
     }
 
 
-
     a{
     
         // her kalder vi funktionen btn , vi bruger @include
-    
         @include partial.btn();
         position: absolute;
         bottom: 180px;
@@ -174,15 +168,8 @@ body{
         @include partial.link-hover();
 
     }
+  }
 
-    //a:hover{
-       //  @include partial.link-hover();
-
-       // background-color: partial.$primary-color;
-       // border: solid 2px partial.$primary-color;
-    }
-
-    
   
 
   .designPara{
@@ -219,9 +206,6 @@ body{
         transition: all 0.3s ease;
         outline: none;
 
-          // &.active {
-          // display: flex;
-          // }
 }
   p{
             font-weight: 480;
@@ -281,9 +265,7 @@ body{
 }
 
 .btn{
-
 @include partial.link-hover();
-//margin-bottom: 50px;
 }
 
 }
@@ -303,8 +285,6 @@ body{
     display: flex;
   }
 }
-
-
 
     .styl-bullet{
       margin-right: 5em;
@@ -327,20 +307,15 @@ body{
   }
 
 
-
   a{
     @include partial.btn(20px 30px 20px 30px);
     margin-left: 5em;
     @include partial.shadow-hover-focus;
     @include partial.link-hover();
-
   }
 
  
    }
-
-
-  
 
 .img_chatbot{
 
@@ -354,6 +329,33 @@ body{
     }
 
   }
+
+  .game-section{
+    background-color: partial.$nav-color;
+    display: flex;
+    flex-direction: column;
+  
+  }
+    
+
+    .game-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2em;
+      background-color: aqua;
+
+    }
+    
+    .game-section p {
+    font-size: 24px;
+    color: partial.$text-color;
+}
+  
+
+  // .game-section img {
+  //   width: 20vh;
+  //   height: 30%;
+  // }
 
 //   .ofre-historier{
 //  font-size: 30px;
@@ -394,8 +396,9 @@ footer{
     background-color: partial.$nav-color;
     height: 12em;
 }
+
   
-// mediaquery flex-wrap: wrap: 
+//-------------------------------------------------------------------------------------------mediaquery flex-wrap: wrap: 
 
 @media (max-width: 768px) {
 
@@ -455,12 +458,12 @@ footer{
     font-size: 16px;
   } 
   
-  // spil side 
+  // // spil side 
 
-  .style-spil{
+  // .style-spil{
 
     
-    //flex-direction: column;
+  //   //flex-direction: column;
    
 
   .style-spil{
@@ -475,13 +478,10 @@ footer{
     margin-right: 1em;
     margin-left: 1em;
 
-  
 }
 
-    &.activee {
-    display: block;
-    }
+    // &.activee {
+    // display: block;
+    // }
 
-
-
-  }
+  
