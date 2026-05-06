@@ -140,6 +140,7 @@ body{
 
   } 
   
+  // Hero section 
    .hero-bstyle{
     background-image:url(../img/hero_pic.jpg);
     background-repeat: no repeat;
@@ -331,7 +332,7 @@ body{
   }
 
   .game-section{
-    background-color: partial.$nav-color;
+    background-color: partial.$bg-color;
     display: flex;
     flex-direction: column;
   
@@ -342,9 +343,9 @@ body{
       display: flex;
       gap: 10px;
       margin-bottom: 2em;
-      background-color: aqua;
+    
 
-    }
+     }
     
     .game-section p {
     font-size: 24px;
@@ -387,7 +388,7 @@ margin-top: 20px;
     width: 40vw;            /* mindre img */
     height: auto;
     scroll-snap-align: start;
-    flex-shrink: 0; /* 👈 DET HER FIXER DET */
+    flex-shrink: 0; 
     border-radius: 15px;
 }
 
@@ -401,6 +402,49 @@ footer{
 //-------------------------------------------------------------------------------------------mediaquery flex-wrap: wrap: 
 
 @media (max-width: 768px) {
+
+
+
+// @media (max-width: 768px) {
+  nav #bars {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+
+            // #bars{
+            //     display: flex;
+            //     border: none; /*Fjerner border fra button tag*/
+            //     background-color: transparent; /*Fjerner baggrundsfarve fra button tag*/
+            //     font-size: 2.3em;
+            //     color: partial.$primary-color;
+            //     cursor: pointer;
+            // }
+
+            nav ul{//proever at rette bars
+                display: none; /*Fjerne nav links*/
+                height: auto;
+                border-top: 4px solid partial.$primary-color;
+                flex-direction: column;
+
+                    li{
+                        display: flex;
+                    }
+            }
+
+             .show{
+                display: flex;
+                position: absolute;
+                top: 80px;
+                left:0;
+                padding: 0;
+                background-color: partial.$nav-color;
+                width: 100%;
+                z-index: 1;
+            }
 
 
   .phishing-container {
@@ -425,11 +469,11 @@ footer{
     font-size: 14px;
   }
 
-  // 🔹 Hero tekst
-  //.hero-bstyle h1 {
-   // font-size: 40px;
-    //left: 20px;
-    //top: 200px;
+  🔹 Hero tekst
+  .hero-bstyle h1 {
+   font-size: 40px;
+    left: 20px;
+    top: 200px;
   }
 
   // 🔹 Layout bliver kolonne
@@ -479,9 +523,14 @@ footer{
     margin-left: 1em;
 
 }
+}
+
 
     // &.activee {
     // display: block;
     // }
 
-  
+
+
+
+    // java script for menu bars
