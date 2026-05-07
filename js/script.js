@@ -1,6 +1,5 @@
 // Start knap
 const btn = document.querySelector(".container_faresignaler .btn");
-let previousStage = null; // prøver at erklære en ny variabel tilføjet nu
 
 // Funktionen der opdatere UI
 const buildStage = (h2Text, pText, btnsText, imagePath, fa, currentSection) => {
@@ -11,7 +10,7 @@ const buildStage = (h2Text, pText, btnsText, imagePath, fa, currentSection) => {
     section.classList.add("active");
     section.classList.add("game-section");
 
-    // game-section wrapper div oprettet en div for at style game section
+    // game-section wrapper div oprettet en div for at style game section scss
     const content = document.createElement("div");
     content.classList.add("game-content");
 
@@ -74,16 +73,6 @@ const nextStage = (e) => {
     const currentSection = e.target.closest(".container_faresignaler");
 
 
-    //  dette skal slettes hvis det ikke fungere . SAVE current state
-    if (e.target.textContent !== "Tilbage") {
-    previousStage = {
-    h2: currentSection.querySelector("h2")?.textContent,
-    p: currentSection.querySelector("p")?.textContent,
-    img: currentSection.querySelector("img")?.src || null
-};
-}
-
-
     switch (e.target.textContent) {
 
         case "Start": // teskten på knapperne
@@ -142,28 +131,7 @@ const nextStage = (e) => {
             btnsText = ["Oplyser detaljer", "Lægger på"];
             break;
 
-            case "Afslut": 
-            h2Text = "Du kan altid prøve igen senere og lære mere om phishing forsøg";
-            pText = "Er du i tvivl om du er blevet udsat for phishing - kontakt IT support.";
-            imagePath ="img/SUmail.png";     
-            btnsText = ["Tilbage"];
-            break;
-
-            // det nye 
-            case "Tilbage":
-            if (previousStage) {
-            buildStage(
-            previousStage.h2,
-            previousStage.p,
-            ["Start"], // or whatever buttons you want
-            previousStage.img,
-            null,
-            currentSection
-        );
-    }
-
-    return;
-
+            
             case "Oplyser detaljer": 
             h2Text = "Ups! Dine oplysnigner er blevet stålet. Du er udsat for Smishing som er en udbredt form for phishing forsøg.";
             pText = "Hvad gør du?";
@@ -178,9 +146,27 @@ const nextStage = (e) => {
             btnsText = ["Meld til IT", "Næste scenario"];
             break;
 
+            case "Afslut": 
+            h2Text = "Du kan altid prøve igen senere og lære mere om phishing forsøg";
+            pText = "Er du i tvivl om du er blevet udsat for phishing - kontakt IT support.";
+            imagePath ="img/SUmail.png";     
+            btnsText = ["Tilbage"];
+            break;
 
+            // Vil gerne have section .container_faresignaler tilbage. kun når der klikkes Tilbage (dvs lukke scenarioet og den gamle section html tilbage)
+           // har prøvet alt muligt;)
+        
+           case "Tilbage":
+           if (previousStage) {
+         const restored = previousStage;
 
-
+        currentSection.replaceWith(restored);
+ 
+        restored.querySelectorAll(".btn").forEach(btn => {
+            btn.addEventListener("click", nextStage);
+        });
+    }
+    return;
 
         default:
             console.log("Error");
@@ -195,9 +181,13 @@ const nextStage = (e) => {
 // Start button event
 btn.addEventListener("click", nextStage); 
 
+
+
 // -------------------------------------------------
 
 
+
+// HAMBURGER JAVA SCRIPT
 
 'use strict';
 
