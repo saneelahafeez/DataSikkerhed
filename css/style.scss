@@ -403,7 +403,9 @@ footer{
 
 @media (max-width: 768px) {
 
-
+  nav {
+    position: relative;
+  }
 
 // @media (max-width: 768px) {
   nav #bars {
@@ -412,6 +414,8 @@ footer{
     background: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    z-index: 20;
   }
 
 
@@ -429,21 +433,24 @@ footer{
                 height: auto;
                 border-top: 4px solid partial.$primary-color;
                 flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 0;
+                margin: 0;
+                background-color: partial.$nav-color;
+                width: 100%;
+                z-index: 10;
 
                     li{
                         display: flex;
+                        justify-content: center;
+                        width: 100%;
                     }
             }
 
-             .show{
+             nav ul.show{
                 display: flex;
-                position: absolute;
-                top: 80px;
-                left:0;
-                padding: 0;
-                background-color: partial.$nav-color;
-                width: 100%;
-                z-index: 1;
             }
 
 
@@ -469,26 +476,25 @@ footer{
     font-size: 14px;
   }
 
-  🔹 Hero tekst
-  .hero-bstyle h1 {
-   font-size: 40px;
+  //  Hero tekst
+  .hero-bstyle a {
     left: 20px;
-    top: 200px;
-  }
+    bottom: 120px;
+}
 
-  // 🔹 Layout bliver kolonne
+  //  Layout bliver kolonne
   .phishing-container {
 
     height: auto;
   }
 
-  // 🔹 Faresignaler sektion
+  //  Faresignaler sektion
   .container_faresignaler {
     flex-wrap: wrap; // 👈 kun på mobil
     gap: 20px;
   }
 
-  // 🔹 Bullet tekst mindre
+  //  Bullet tekst mindre
   .styl-bullet h2 {
     font-size: 28px;
   }
@@ -497,7 +503,7 @@ footer{
     //font-size: 6px;
   //}
 
-  // 🔹 Knapper
+  //  Knapper
   a {
     font-size: 16px;
   } 

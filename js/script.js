@@ -1,5 +1,6 @@
 // Start knap
 const btn = document.querySelector(".container_faresignaler .btn");
+let previousStage = document.querySelector(".container_faresignaler").cloneNode(true);
 
 // Funktionen der opdatere UI
 const buildStage = (h2Text, pText, btnsText, imagePath, fa, currentSection) => {
@@ -79,7 +80,7 @@ const nextStage = (e) => {
             h2Text = "Du modtager mail fra SU kontoret."; // Overskrift hvad sker der 
             imagePath ="img/SUmail.png";                    // img 
             pText = "Hvordan vælger du at handle?";         // instruktioner eller selve scenarioet 
-            btnsText = ["Åbner", "Ignorere", "Tjekker afender"]; // knap mulighederne 
+            btnsText = ["Åbner", "Ignorere", "Tjekker sender"]; // knap mulighederne 
            
             break;
 
@@ -93,27 +94,27 @@ const nextStage = (e) => {
         case "Ignorere":
             h2Text = "Godt valg";
             pText = "Du undgik et phishing forsøg.";
-            btnsText = ["Start Over"];
+            btnsText = ["Næste"];
             break;
 
         case "Tjekker sender":
             h2Text = "Godt set!";
             pText = "E-mailen var fake. Du undgik et phishing forsøg.";
-            btnsText = ["Start Over"];
+            btnsText = ["Næste"];
             break;
 
         case "Start Over": 
             h2Text = "Prøv igen det en læringsprocess";
             imagePath ="img/Motivation.png";     
             pText = "Vær ekstra opmærksom på faresignalerne. Det kan spare dig for en masse fustration fremover.";
-            btnsText = ["Fortsæt", ];
+            btnsText = ["Fortsæt"];
             break;
 
         case "Fortsæt": 
             h2Text = "Du har modtager en mail fra Netflix som kræver handling.";
             pText = "Hvordan vælger du at handle? ";
             imagePath ="img/SUmail.png";     
-            btnsText = ["Åbner", "Ignorere", "Tjekker afender"];
+            btnsText = ["Åbner", "Ignorere", "Tjekker sender"];
             break;
 
             //meld til IT
@@ -121,7 +122,7 @@ const nextStage = (e) => {
             h2Text = "Fornuftigt handlet!. Scam skal altid meldes til IT afdelingen.";
             pText = "Fortsæt endelig din læringsprocess.";
             imagePath ="img/SUmail.png";     
-            btnsText = ["Næste", "Afslut",];
+            btnsText = ["Næste", "Afslut"];
             break;
 
             case "Næste": 
@@ -143,7 +144,28 @@ const nextStage = (e) => {
             h2Text = "Fint handlet! Du var opmærksom og undgik et phishing forsøg (typen smishing som foregår enten via sms eller opkald).";
             pText = "Fortsæt din læring";
             imagePath ="img/SUmail.png";     
-            btnsText = ["Meld til IT", "Næste scenario"];
+            btnsText = ["Næste scenario"];
+            break;
+
+            case "Næste scenario":
+            h2Text = "Du modtager en SMS fra PostNord med et mistænkeligt link.";
+            pText = "Hvad gør du?";
+            imagePath ="img/SUmail.png";     
+            btnsText = ["Klikker på linket", "Ignorerer SMS"];
+            break;
+
+            case "Klikker på linket":
+            h2Text = "Ups! Det var smishing.";
+            pText = "SMS'en forsøgte at lokke dig til en falsk hjemmeside.";
+            imagePath ="img/scam.png";     
+            btnsText = ["Meld til IT", "Afslut"];
+            break;
+
+            case "Ignorerer SMS":
+            h2Text = "Godt valg!";
+            pText = "Du undgik endnu et phishing forsøg.";
+            imagePath ="img/SUmail.png";     
+            btnsText = ["Afslut"];
             break;
 
             case "Afslut": 
@@ -158,7 +180,7 @@ const nextStage = (e) => {
         
            case "Tilbage":
            if (previousStage) {
-         const restored = previousStage;
+         const restored = previousStage.cloneNode(true);
 
         currentSection.replaceWith(restored);
  
@@ -195,46 +217,6 @@ btn.addEventListener("click", nextStage);
 const bars = document.querySelector("#bars");// Menu-knappen (hamburger/kryds)
 const icon = document.querySelector("#bars > i");// Ikonet inde i knappen
 const nav = document.querySelector("#menu");// Navigationens <ul>-element
-const navLinks = nav.querySelectorAll("li > a");// Alle links i navigationen
-
-// Funktion til at fange tastatur-fokus og styre navigation med Tab, Shift+Tab og Escape
-const trapFocus = (e) => {
-    // Hvis menuen IKKE er åben, gør intet
-    if (!nav.classList.contains("show")) return;
-
-    // Definer første og sidste element i fokus-rækkefølgen
-    const first = bars;
-    const last = navLinks[navLinks.length - 1];
-
-    // Brugeren trykker TAB
-    if (e.key === "Tab") {
-        // SHIFT+TAB på første element → flyt fokus til sidste link
-        if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault(); // Forhindrer standard Tab-rotation
-            last.focus();       // Gør loopet komplet baglæns
-        }
-
-        // TAB på sidste element → flyt fokus tilbage til knappen (første)
-        else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus(); // Fokus-loop fremad
-        }
-    }
-
-
-    // Brugeren trykker ESCAPE → luk menuen og sæt fokus tilbage på knappen
-    //  window.addEventListener("keyup", (e) => {
-    if (e.key === "Escape" || e.key === "Esc") {
-        nav.classList.remove("show");// Fjern 'show' → skjul menu
-
-        icon.classList.add("fa-bars");// Skift ikon tilbage til hamburger
-        icon.classList.remove("fa-xmark");
-
-        bars.setAttribute("aria-expanded", "false");// Opdater ARIA-attribut: menuen er nu lukket
-        bars.setAttribute("aria-label", "åben navigation"); // Opdater label for skærmlæsere
-        bars.focus(); // Sæt fokus tilbage på knappen
-        }
-    };
 
 // Funktion der åbner/lukker navigationen ved klik på bars-knappen
 const openNav = () => {
@@ -254,16 +236,3 @@ const openNav = () => {
 
 // Tilføj klik-event til knappen → åbn/luk menuen
 bars.addEventListener("click", openNav);
-
-// Tilføj global keydown-lytter → styrer fokus-loop og ESC-luk
-document.addEventListener("keydown", trapFocus);
-
-
-
-
-
-
-
-
-
-
