@@ -281,6 +281,7 @@ body{
   padding-top: 70px;
   @include partial.shadow-hover-focus;
   display: none;// har lige sat display none- display block ind lad os se om det funger
+  min-height: 700px;
 
   &.active {
     display: flex;
@@ -335,6 +336,7 @@ body{
     background-color: partial.$bg-color;
     display: flex;
     flex-direction: column;
+    min-height: 700px;
   
   }
     
@@ -410,23 +412,17 @@ footer{
 // @media (max-width: 768px) {
   nav #bars {
     display: block;
-    font-size: 24px;
+    font-size: 26px;
     background: none;
+    margin: 1px;
+    padding: 1px;
     border: none;
     cursor: pointer;
     position: relative;
     z-index: 20;
+    
   }
 
-
-            // #bars{
-            //     display: flex;
-            //     border: none; /*Fjerner border fra button tag*/
-            //     background-color: transparent; /*Fjerner baggrundsfarve fra button tag*/
-            //     font-size: 2.3em;
-            //     color: partial.$primary-color;
-            //     cursor: pointer;
-            // }
 
             nav ul{//proever at rette bars
                 display: none; /*Fjerne nav links*/

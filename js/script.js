@@ -1,4 +1,4 @@
-// Start knap
+// Start
 const btn = document.querySelector(".container_faresignaler .btn");
 let previousStage = document.querySelector(".container_faresignaler").cloneNode(true);
 
@@ -13,7 +13,7 @@ const buildStage = (h2Text, pText, btnsText, imagePath, fa, currentSection) => {
 
     // game-section wrapper div oprettet en div for at style game section scss
     const content = document.createElement("div");
-    content.classList.add("game-content");
+    // content.classList.add("game-content"); ser lige om det stopper flimren
 
     // overskrift
     const h2 = document.createElement("h2");
@@ -76,81 +76,83 @@ const nextStage = (e) => {
 
     switch (e.target.textContent) {
 
-        case "Start": // teskten på knapperne
+        case "Spot phishing": // teskten på knapperne
             h2Text = "Du modtager mail fra SU kontoret."; // Overskrift hvad sker der 
-            imagePath ="img/SUmail.png";                    // img 
-            pText = "Hvordan vælger du at handle?";         // instruktioner eller selve scenarioet 
+            pText = "Hvordan vælger du at handle?";  
+            imagePath ="img/SUmail.png";             // instruktioner eller selve scenarioet 
             btnsText = ["Åbner", "Ignorere", "Tjekker sender"]; // knap mulighederne 
            
             break;
 
         case "Åbner":
-            h2Text = "Ups det var et Phishing forsøg!";
+            h2Text = "Ups! Du blev udsat for phishing!";
+            pText = "Linket førte til en falsk hjemmeside, hvor dine loginoplysninger blev stjålet.";
             imagePath ="img/scam.png";
-            pText = "Du har klikket et malicious link og dine data er stålet.";
             btnsText = ["Start Over", "Meld til IT"];
             break;
 
         case "Ignorere":
-            h2Text = "Godt valg";
-            pText = "Du undgik et phishing forsøg.";
+            h2Text = "God beslutning";
+            
+            pText = "Du undgik at interagere med en mistænkelig mail og beskyttede dine oplysninger.";
+            imagePath ="img/ThumbsUp.png";
             btnsText = ["Næste"];
             break;
 
-        case "Tjekker sender":
-            h2Text = "Godt set!";
-            pText = "E-mailen var fake. Du undgik et phishing forsøg.";
+        case "Tjekker afsender":
+            h2Text = "Godt observeret!";
+            pText = "Afsenderens adresse virkede mistænkelig. Ved at undersøge mailen nærmere undgik du phishing."; 
+            imagePath ="img/verify.png";
             btnsText = ["Næste"];
             break;
 
         case "Start Over": 
-            h2Text = "Prøv igen det en læringsprocess";
+            h2Text = "Prøv igen";
+            pText = "Phishing-forsøg kan være svære at opdage. Vær opmærksom på faresignaler som mistænkelige links og presserende beskeder.";
             imagePath ="img/Motivation.png";     
-            pText = "Vær ekstra opmærksom på faresignalerne. Det kan spare dig for en masse fustration fremover.";
             btnsText = ["Fortsæt"];
             break;
 
         case "Fortsæt": 
-            h2Text = "Du har modtager en mail fra Netflix som kræver handling.";
+            h2Text = "Du har modtaget en mail fra Netflix som kræver handling.";
             pText = "Hvordan vælger du at handle? ";
-            imagePath ="img/SUmail.png";     
-            btnsText = ["Åbner", "Ignorere", "Tjekker sender"];
+            imagePath ="img/Netflix.png";     
+            btnsText = ["Åbner", "Ignorere", "Tjekker afsender"];
             break;
 
-            //meld til IT
             case "Meld til IT": 
-            h2Text = "Fornuftigt handlet!. Scam skal altid meldes til IT afdelingen.";
-            pText = "Fortsæt endelig din læringsprocess.";
-            imagePath ="img/SUmail.png";     
+            h2Text = "God sikkerhedsadfærd";
+            pText = "Ved at melde hændelsen til IT-afdelingen hjælper du med at beskytte både dig selv og andre studerende.";
+            imagePath ="img/ItSupport.png"; 
             btnsText = ["Næste", "Afslut"];
             break;
 
             case "Næste": 
-            h2Text = "Du modtager et opkald fra din bank som kræver dankort oplysninger Øjeblikkeligt.";
-            pText = "Hvad gør du?";
-            imagePath ="img/SUmail.png";     
+            h2Text = "Du modtager et opkald fra banken";
+            pText = "Personen i telefonen siger, at dit kort er blevet hacket og beder om dine kortoplysninger med det samme. Hvad gør du?";
+            imagePath ="img/call.png";     
             btnsText = ["Oplyser detaljer", "Lægger på"];
             break;
 
             
             case "Oplyser detaljer": 
-            h2Text = "Ups! Dine oplysnigner er blevet stålet. Du er udsat for Smishing som er en udbredt form for phishing forsøg.";
-            pText = "Hvad gør du?";
+            h2Text = "Dine oplysninger blev misbrugt";
+            pText = "Svindleren brugte dine kortoplysninger til at få adgang til din konto. Banken vil aldrig bede om følsomme oplysninger over telefonen. Hvad gør du?";
             imagePath ="img/SUmail.png";     
             btnsText = ["Meld til IT", "Næste scenario"];
             break;
 
             case "Lægger på": 
-            h2Text = "Fint handlet! Du var opmærksom og undgik et phishing forsøg (typen smishing som foregår enten via sms eller opkald).";
-            pText = "Fortsæt din læring";
+            h2Text = "Godt reageret";
+            pText = "Du genkendte faresignalerne og undgik et smishing-forsøg via telefon.";
             imagePath ="img/SUmail.png";     
             btnsText = ["Næste scenario"];
             break;
 
             case "Næste scenario":
-            h2Text = "Du modtager en SMS fra PostNord med et mistænkeligt link.";
-            pText = "Hvad gør du?";
-            imagePath ="img/SUmail.png";     
+            h2Text = "Du modtager en mail fra PostNord";
+            pText = "Hvad gør du?";    
+            imagePath ="img/Postnord.png"; 
             btnsText = ["Klikker på linket", "Ignorerer SMS"];
             break;
 
@@ -169,14 +171,11 @@ const nextStage = (e) => {
             break;
 
             case "Afslut": 
-            h2Text = "Du kan altid prøve igen senere og lære mere om phishing forsøg";
-            pText = "Er du i tvivl om du er blevet udsat for phishing - kontakt IT support.";
-            imagePath ="img/SUmail.png";     
+            h2Text = "Nu er du bedre klædt på til sikker adfærd online.";
+            pText = "Digitale trusler kan ramme alle. Ved at være opmærksom på faresignaler kan du beskytte dine data og handle mere sikkert online.";
+            imagePath ="img/SUmail.png";   
             btnsText = ["Tilbage"];
             break;
-
-            // Vil gerne have section .container_faresignaler tilbage. kun når der klikkes Tilbage (dvs lukke scenarioet og den gamle section html tilbage)
-           // har prøvet alt muligt;)
         
            case "Tilbage":
            if (previousStage) {

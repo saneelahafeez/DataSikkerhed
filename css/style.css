@@ -263,6 +263,7 @@ nav .navbar nav {
 }
 .container_faresignaler {
   display: none;
+  min-height: 700px;
 }
 .container_faresignaler.active {
   display: flex;
@@ -319,6 +320,7 @@ nav .navbar nav {
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
+  min-height: 700px;
 }
 
 .game-buttons {
@@ -369,8 +371,10 @@ footer {
   }
   nav #bars {
     display: block;
-    font-size: 24px;
+    font-size: 26px;
     background: none;
+    margin: 1px;
+    padding: 1px;
     border: none;
     cursor: pointer;
     position: relative;
