@@ -371,9 +371,10 @@ footer {
   }
   nav #bars {
     display: block;
-    font-size: 26px;
+    font-size: 38px;
     background: none;
-    margin: 1px;
+    margin-top: 18px;
+    margin-left: 10px;
     padding: 1px;
     border: none;
     cursor: pointer;
