@@ -80,7 +80,7 @@ const nextStage = (e) => {
             h2Text = "Du modtager mail fra SU kontoret."; // Overskrift hvad sker der 
             pText = "Hvordan vælger du at handle?";  
             imagePath ="img/SUmail.png";             
-            btnsText = ["Åbner", "Ignorere", "Tjekker sender"]; // knap mulighederne 
+            btnsText = ["Åbner", "Ignorere", "Tjekker afsender"]; // knap mulighederne 
            
             break;
 
