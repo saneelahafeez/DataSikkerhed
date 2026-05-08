@@ -138,7 +138,7 @@ const nextStage = (e) => {
             case "Oplyser detaljer": 
             h2Text = "Dine oplysninger blev misbrugt";
             pText = "Svindleren brugte dine kortoplysninger til at få adgang til din konto. Banken vil aldrig bede om følsomme oplysninger over telefonen. Hvad gør du?";
-            imagePath ="img/SUmail.png";     
+            imagePath ="img/DataGone.png";     
             btnsText = ["Meld til IT", "Næste scenario"];
             break;
 
