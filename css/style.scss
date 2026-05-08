@@ -79,7 +79,7 @@ body{
     // align-items: center;
     // justify-content: center;
     // gap: 20px;
-    // @include partial.flex($justify:flex-center);
+    @include partial.flex($justify:flex-center);
     // gap: 20px;
     }
 
@@ -155,6 +155,7 @@ body{
     background-position: center;
     width:100%;
     height:90vh;
+  
     
     h1{
     font-size: 60px;
@@ -168,7 +169,7 @@ body{
 
     a{
     
-        // her kalder vi funktionen btn , vi bruger @include
+        // her kalder vi funktionen btn og lin-hover vi bruger @include
         @include partial.btn();
         position: absolute;
         bottom: 180px;
@@ -290,7 +291,7 @@ body{
   border: solid 3px partial.$text-color;
   padding-top: 70px;
   @include partial.shadow-hover-focus;
-  display: none;// har lige sat display none- display block ind lad os se om det funger
+  display: none;
   min-height: 700px;
 
   &.active {
@@ -435,7 +436,7 @@ footer{
   }
 
 
-            nav ul{//proever at rette bars
+            nav ul{
                 display: none; /*Fjerne nav links*/
                 height: auto;
                 border-top: 4px solid partial.$primary-color;
@@ -454,6 +455,10 @@ footer{
                         justify-content: center;
                         width: 100%;
                     }
+                    
+            a:hover {
+            color: white;
+            }
             }
 
              nav ul.show{
@@ -461,16 +466,17 @@ footer{
             }
 
 
+
   .phishing-container {
-    flex-wrap: wrap; // 👈 kun på mobil
+    flex-wrap: wrap; //  kun på mobil
   }
 
   .container1,
   .container2 {
-    flex: 1 1 100%; // 👈 tager hele bredden
+    flex: 1 1 100%; // tager hele bredden
   }
 
-  // 🔹 Tekst mindre
+  // Tekst mindre
   h1 {
     font-size: 30px;
   }
@@ -485,8 +491,18 @@ footer{
 
   //  Hero tekst
   .hero-bstyle a {
-    left: 20px;
-    bottom: 120px;
+    // left: 20px;
+    // bottom: 120px;
+    // // position: absolute;
+        bottom: 180px;
+        left: 220px;
+}
+
+.hero-bstyle h1{ 
+  font-size: 50px;
+  font-weight: 600;
+  left: 30px;
+  top: 280px;
 }
 
   //  Layout bliver kolonne
@@ -498,7 +514,7 @@ footer{
   //  Faresignaler sektion
   .container_faresignaler {
     flex-wrap: wrap; // 👈 kun på mobil
-    gap: 20px;
+    gap: 5px;
   }
 
   //  Bullet tekst mindre
@@ -538,12 +554,3 @@ footer{
 }
 }
 
-
-    // &.activee {
-    // display: block;
-    // }
-
-
-
-
-    // java script for menu bars

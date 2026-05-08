@@ -85,7 +85,6 @@ header h1 {
   color: white;
   font-weight: 600;
   font-size: 3rem;
-  padding-left: 4em;
 }
 
 nav {
@@ -136,7 +135,7 @@ nav .navbar nav {
 
 .hero-bstyle {
   background-image: url(../img/hero_pic.jpg);
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -181,7 +180,8 @@ nav .navbar nav {
   gap: 30px;
   margin-left: 50px;
   margin-right: 50px;
-  height: 500px;
+  min-height: 500px;
+  height: auto;
   border-radius: 15px;
   margin-bottom: 2em;
 }
@@ -400,6 +400,9 @@ footer {
     justify-content: center;
     width: 100%;
   }
+  nav ul a:hover {
+    color: white;
+  }
   nav ul.show {
     display: flex;
   }
@@ -420,15 +423,21 @@ footer {
     font-size: 14px;
   }
   .hero-bstyle a {
-    left: 20px;
-    bottom: 120px;
+    bottom: 180px;
+    left: 220px;
+  }
+  .hero-bstyle h1 {
+    font-size: 50px;
+    font-weight: 600;
+    left: 30px;
+    top: 280px;
   }
   .phishing-container {
     height: auto;
   }
   .container_faresignaler {
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 5px;
   }
   .styl-bullet h2 {
     font-size: 28px;
