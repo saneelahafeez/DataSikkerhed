@@ -79,7 +79,7 @@ const nextStage = (e) => {
         case "Spot phishing": // teskten på knapperne
             h2Text = "Du modtager mail fra SU kontoret."; // Overskrift hvad sker der 
             pText = "Hvordan vælger du at handle?";  
-            imagePath ="img/SUmail.png";             // instruktioner eller selve scenarioet 
+            imagePath ="img/SUmail.png";             
             btnsText = ["Åbner", "Ignorere", "Tjekker sender"]; // knap mulighederne 
            
             break;
@@ -92,9 +92,9 @@ const nextStage = (e) => {
             break;
 
         case "Ignorere":
-            h2Text = "God beslutning";
+            h2Text = "God beslutning!";
             
-            pText = "Du undgik at interagere med en mistænkelig mail og beskyttede dine oplysninger.";
+            pText = "Du undgik at interagere med et mistænkeligt link og beskyttede dine oplysninger.";
             imagePath ="img/ThumbsUp.png";
             btnsText = ["Næste"];
             break;
@@ -121,7 +121,7 @@ const nextStage = (e) => {
             break;
 
             case "Meld til IT": 
-            h2Text = "God sikkerhedsadfærd";
+            h2Text = "God sikkerhedsadfærd!";
             pText = "Ved at melde hændelsen til IT-afdelingen hjælper du med at beskytte både dig selv og andre studerende.";
             imagePath ="img/ItSupport.png"; 
             btnsText = ["Næste", "Afslut"];
@@ -129,7 +129,7 @@ const nextStage = (e) => {
 
             case "Næste": 
             h2Text = "Du modtager et opkald fra banken";
-            pText = "Personen i telefonen siger, at dit kort er blevet hacket og beder om dine kortoplysninger med det samme. Hvad gør du?";
+            pText = "Du bliver bedt om at oplyse kortoplysninger da kortet er blevet hacket.Hvad gør du?";
             imagePath ="img/call.png";     
             btnsText = ["Oplyser detaljer", "Lægger på"];
             break;
@@ -145,7 +145,7 @@ const nextStage = (e) => {
             case "Lægger på": 
             h2Text = "Godt reageret";
             pText = "Du genkendte faresignalerne og undgik et smishing-forsøg via telefon.";
-            imagePath ="img/SUmail.png";     
+            imagePath ="img/yes.png";     
             btnsText = ["Næste scenario"];
             break;
 
@@ -153,7 +153,7 @@ const nextStage = (e) => {
             h2Text = "Du modtager en mail fra PostNord";
             pText = "Hvad gør du?";    
             imagePath ="img/Postnord.png"; 
-            btnsText = ["Klikker på linket", "Ignorerer SMS"];
+            btnsText = ["Klikker på linket", "Ignorerer mail"];
             break;
 
             case "Klikker på linket":
@@ -163,17 +163,17 @@ const nextStage = (e) => {
             btnsText = ["Meld til IT", "Afslut"];
             break;
 
-            case "Ignorerer SMS":
+            case "Ignorerer mail":
             h2Text = "Godt valg!";
             pText = "Du undgik endnu et phishing forsøg.";
-            imagePath ="img/SUmail.png";     
+            imagePath ="img/flot.png";     
             btnsText = ["Afslut"];
             break;
 
             case "Afslut": 
-            h2Text = "Nu er du bedre klædt på til sikker adfærd online.";
-            pText = "Digitale trusler kan ramme alle. Ved at være opmærksom på faresignaler kan du beskytte dine data og handle mere sikkert online.";
-            imagePath ="img/SUmail.png";   
+            h2Text = "Du er nu bedre klædt på til sikker adfærd online.";
+            pText = "Ved at være opmærksom på faresignalerne kan du beskytte dine data og handle mere sikkert online.";
+            imagePath ="img/staysafe.png";   
             btnsText = ["Tilbage"];
             break;
         
@@ -204,11 +204,9 @@ btn.addEventListener("click", nextStage);
 
 
 
-// -------------------------------------------------
 
 
-
-// HAMBURGER JAVA SCRIPT
+// HAMBURGER Menu JAVA SCRIPT
 
 'use strict';
 

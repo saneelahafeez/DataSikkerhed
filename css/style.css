@@ -69,31 +69,32 @@ img {
 
 /*Navigation*/
 header {
-  grid-column: 1/6; /*grid column start og slut på en linje i stedet for to*/
   /* TOP HEADER (sort) */
 }
 header .top-header {
   background-color: #000000;
   color: white;
-  padding: 1rem;
+  margin-left: 0;
+  margin-right: 0;
   /*$justify og $align er parametre/variabler som kan ændres når vores mixin kaldes*/
   display: flex;
-  justify-content: flex-center;
+  justify-content: flex-start;
   align-items: center;
 }
-header h1 {
+header .top-header img {
+  width: 120px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+header .top-header h1 {
   color: white;
   font-weight: 600;
   font-size: 3rem;
+  margin-left: 17em;
 }
 
 nav {
   height: 4em;
-}
-nav img {
-  width: 70px;
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 nav #bars {
   display: none;
@@ -157,7 +158,7 @@ nav .navbar nav {
   text-decoration: none;
   font-weight: 800;
   position: absolute;
-  bottom: 180px;
+  bottom: 300px;
   left: 220px;
 }
 .hero-bstyle a:hover {
@@ -353,7 +354,7 @@ nav .navbar nav {
 }
 
 .horisontal img {
-  width: 40vw; /* mindre img */
+  width: 40vw;
   height: auto;
   scroll-snap-align: start;
   flex-shrink: 0;
@@ -378,7 +379,10 @@ footer a {
   font-size: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+  .top-header h1 {
+    display: none;
+  }
   nav {
     position: relative;
   }
@@ -467,5 +471,13 @@ footer a {
   .btn {
     margin-right: 1em;
     margin-left: 1em;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .top-header h1 {
+    display: none;
+  }
+  .hero-bstyle a {
+    bottom: 150px;
   }
 }/*# sourceMappingURL=style.css.map */
