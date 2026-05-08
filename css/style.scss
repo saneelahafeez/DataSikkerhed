@@ -9,7 +9,7 @@ body{
     font-family: partial.$font;
     background-color: partial.$containerbg;
 
-    zoom: 0.7; // TILFØJ DEN HER
+    zoom: 0.7; // selv tilføjet
 
     /*Nesting - indsætter "alle" elementer som har direkte relation til øverste element af blokken*/    
         p{
@@ -74,15 +74,22 @@ body{
     background-color: partial.$nav-color;
     color: white;
     padding: 1rem;
-
-    @include partial.flex($justify:flex-center);}
+    
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // gap: 20px;
+    // @include partial.flex($justify:flex-center);
+    // gap: 20px;
+    }
 
 
     h1 {
     color: white;
     font-weight: 600;
     font-size: 3rem;
-    padding-left: 4em;
+    // padding-left: 4em;
+    // @include partial.flex($justify:flex-center);}
 
   }
 
@@ -143,7 +150,7 @@ body{
   // Hero section 
    .hero-bstyle{
     background-image:url(../img/hero_pic.jpg);
-    background-repeat: no repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width:100%;
@@ -191,7 +198,10 @@ body{
     gap: 30px;
     margin-left: 50px;
     margin-right: 50px;
-    height: 500px; // har lige sat til auto
+
+    min-height: 500px; // ser lige hvad der sker har sat min -height istedet for hight
+    height: auto;
+
     border-radius: 15px;
     margin-bottom: 2em;
    
